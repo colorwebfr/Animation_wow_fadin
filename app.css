@@ -1,0 +1,8 @@
+/* RESET ANIMATION */
+@media only screen and (min-width: 1024px){
+    /* Animation function with jquery animeInViewport() */
+    .wow.fadeInUp {position: relative;transform: translateY(100px);opacity: 0;transition: .4s ease-in-out;}
+    .wow.fadeInDown {position: relative;transform: translateY(-100px);opacity: 0;transition: .4s ease-in-out;}
+    .wow.fadeInLeft {position: relative;transform: translateX(-100px);opacity: 0;transition: .4s ease-in-out;}
+    .wow.fadeInRight {position: relative;transform: translateX(100px);opacity: 0;transition: .4s ease-in-out;}
+}
