@@ -10,9 +10,10 @@ function animeInViewport() {
             if ($('body').find('wow')) {
                 //El appear on page loading
                 $.each($('.wow'), function () {
+                    let win = $(window).scrollTop();
                     let wow = parseInt($(this).offset().top);
                     //Appear elements
-                    if (wow <= 250) {
+                    if (win >= wow - 600) {
                         switch (true) {
                             case $(this).hasClass('fadeInUp'):
                                 $(this).css({ 'opacity': '1', 'transform': 'translateY(0)' });
