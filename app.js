@@ -1,9 +1,12 @@
+
+
 /*---------------------------------------------------------------
 Anime any element inn viewport
 -----------------------------------------------------------------*/
-function animeInViewport() {
+function animeInViewport(offset = 0) {
     $(document).ready(function () {
         const width_Screen = parseInt($(window).width());
+        const heightScreen = parseInt($(window).height() - offset);
         //Only for desktop
         if (width_Screen > 1024) {
             //event scroll
@@ -13,7 +16,7 @@ function animeInViewport() {
                     let win = $(window).scrollTop();
                     let wow = parseInt($(this).offset().top);
                     //Appear elements
-                    if (win >= wow - 600) {
+                    if (win >= wow - heightScreen) {
                         switch (true) {
                             case $(this).hasClass('fadeInUp'):
                                 $(this).css({ 'opacity': '1', 'transform': 'translateY(0)' });
@@ -40,7 +43,7 @@ function animeInViewport() {
                     $.each($('.wow'), function () {
                         let wow = parseInt($(this).offset().top);
                         //Appear elements
-                        if (scrollY > wow - 600) {
+                        if (scrollY > wow - heightScreen) {
                             switch (true) {
                                 case $(this).hasClass('fadeInUp'):
                                     $(this).css({ 'opacity': '1', 'transform': 'translateY(0)' });
@@ -65,4 +68,3 @@ function animeInViewport() {
         }
     });
 }
-animeInViewport();
